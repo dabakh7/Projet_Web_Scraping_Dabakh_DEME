@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/donneeIphone.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <h1>Tableaux des iphones avec leurs prix</h1>
+    <div id="conteneur">
+        <!-- <div id="titre">Tableaux Comparatives des prix de différents marques d'iphones</div>
+        {%for tel in produit%}
+        <div id="table1">
+            <p>{{tel.marque}}</p>
+            <p>{{tel.prix}}</p>
+        </div>
+        {%endfor%}
+
+        {%for tele in produit2%}
+        <div id="table2">
+            <p>{{tele.marque}}</p>
+            <p>{{tele.prix}}</p>
+        </div>
+        {%endfor%}
+
+        {%for telephone in produit3%}
+        <div id="table3">
+            <p>{{telephone.marque}}</p>
+            <p>{{telephone.prix}}</p>
+        </div>
+        {%endfor%} -->
+        <div id="div1">
+            <h2>Prix Iphone sur jumia</h2>
+            <table class="table table-dark table-striped">
+                <thead id="thead">
+                    <tr>
+                        <th id="table1">Marque</th>
+                        <th>Prix</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {%for tel in produit%}
+
+                    <tr>
+                        <td>{{tel.marque}}</td>
+                        <td>{{tel.prix}}</td>
+                    </tr>
+                    {%endfor%}
+
+                </tbody>
+            </table>
+        </div>
+
+
+        <div id="div2">
+            <h2>Prix Iphone sur Rakuten</h2>
+            <table class="table table-success table-striped">
+                <thead id="thead">
+                    <tr>
+                        <th>Marque</th>
+                        <th>Prix</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {%for tele in produit2%}
+
+                    <tr>
+                        <td>{{tele.marque}}</td>
+                        <td>{{tele.prix}}</td>
+                    </tr>
+                    {%endfor%}
+
+                </tbody>
+            </table>
+        </div>
+
+        <div id="div3">
+            <h2>Prix Iphone sur Boulanger</h2>
+        <table class="table table-dark table-striped">
+            <thead id="thead">
+                <tr>
+                    <th>Marque</th>
+                    <th>Prix</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {%for telephone in produit3%}
+
+                <tr>
+                    <td>{{telephone.marque}}</td>
+                    <td>{{telephone.prix}}</td>
+                </tr>
+                {%endfor%}
+
+            </tbody>
+        </table>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

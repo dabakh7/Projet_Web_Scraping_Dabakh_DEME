@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/pageLogin.css">
+
+
+</head>
+
+<body>
+    <div id="conteneur">
+        <div id="logo">
+            <img src="../static/toutivoore.jpg" alt="">
+        </div>
+        <form id="form" method="POST" action="/sign_in">
+            <input type="text" id="utilisateur" name="username" placeholder="compte utilisateur" size="30">
+
+            <input type="password" id="motdepasse" name="password" placeholder="Votre mot de passe" size="30">
+            
+            <input type="hidden" id="nombre" value="{{ profil }}">
+            <button type="submit" id="submit"> CONNECTER </button>
+            {% for message in get_flashed_messages() %}
+            
+            <p id="erreur">{{ message }} </p>
+            {% endfor %}
+
+        </form>
+
+    </div>
+
+
+    <script type="text/javascript" src="../static/js/pageLogin.js"></script>
+
+</body>
+
+</html>

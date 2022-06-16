@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="../static/js/dashbord.js"></script>
+    <link rel="stylesheet" href="../static/css/dashbord.css">
+    <title>Dashbord</title>
+</head>
+
+<body>
+    <h1>Dashbord</h1>
+
+    <div id="conteneur">
+        <div><canvas id="bar" width='200' height='50'></canvas></div>
+        <canvas id="pie" idth="200" height="50"></canvas>></canvas>
+        <canvas id="bar1" width="200" height="50"></canvas>
+
+
+
+        
+        <div id="graph_en_bar" style="width: 100;">
+
+            <script>
+                //graphe en bar
+
+                const grapheBar = document.getElementById('bar').getContext('2d');
+                const myChartBar = new Chart(grapheBar, {
+                    type: 'bar',
+                    data: {
+                        labels: [{% for nom in phones %} '{{nom[0]}}', {% endfor %}],
+                datasets: [{
+                    label: 'graphe des iphone en fonction des prix',
+                    data: [{% for elm in phones %} {{ elm[1] }}, {% endfor %}],
+                    borderWidth: 1,
+                        backgroundColor: ['grey'],
+
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            </script>
+
+        </div>
+
+        <div id="graph_en_bar2" style="width: 100;">
+
+            <script>
+                //graphe en bar
+
+                const grapheBar2 = document.getElementById('pie').getContext('2d');
+                const myChartBar2 = new Chart(grapheBar2, {
+                    type: 'bar',
+                    data: {
+                        labels: [{% for noms in dataPhones %} '{{noms[0]}}', {% endfor %}],
+                datasets: [{
+                    label: 'graphe des iphone en fonction des prix',
+                    data: [{% for elms in dataPhones %} {{ elms[1] }}, {% endfor %}],
+                    borderWidth: 1,
+                        backgroundColor: ['blue'],
+
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            </script>
+
+        </div>
+
+        <div id="graphe1" style="width: 100;">
+            <script>
+                // graphe en bar
+                const grapheLine1 = document.getElementById('bar1').getContext('2d');
+                const myChart1 = new Chart(grapheLine,{
+                    type: 'bar',
+                    data: {
+                        labels: [{% for n in list_datas %} "{{n[0]}}", {% endfor %}],
+                datasets: [{
+                    label: 'graphe des iphone en fonction des prix sur jumia',
+                    data: [{% for elmt in list_datas %} {{elmt[1]}}, {% endfor %}],
+                    borderWidth: 1,
+                        backgroundColor: ['red'],
+                    
+                
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            </script>
+        </div>
+
+
+    </div>
